@@ -2,6 +2,8 @@ package com.example.designmode.singletion;
 
 import com.example.designmode.singletion.hungrertype.HungerType;
 import com.example.designmode.singletion.lazytype.LazyType;
+import com.example.designmode.singletion.lazytype.LazyTypeStatic;
+import org.springframework.context.annotation.Lazy;
 
 /**
  * Created by IntelliJ IDEA. @Author : cywgod
@@ -21,5 +23,10 @@ public class Test {
     LazyType lazyType = LazyType.getLazyTypeOne();
     LazyType lazyType1 = LazyType.getLazyTypeOne();
     System.out.println(lazyType == lazyType1);
+
+    // 测试懒汉式单例模式：线程安全
+    LazyTypeStatic lazyTypeStatic = LazyTypeStatic.getLazyTypeStatic();
+    LazyTypeStatic lazyTypeStatic1 = LazyTypeStatic.getLazyTypeStatic();
+    System.out.println(lazyTypeStatic == lazyTypeStatic1);
   }
 }
